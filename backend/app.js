@@ -2,11 +2,12 @@ import express from 'express'
 import path from 'path'
 import cors from 'cors'
 import pdfRoutes from  './routes/pdfRoutes.js'
-
+import dotenv from 'dotenv'
+dotenv.config()
 const app = express()
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // specify your front-end URL
+  origin: process.env.BACKEND_URL, // specify your front-end URL
   credentials: true, // allow credentials
 };
 
